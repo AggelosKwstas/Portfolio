@@ -1,0 +1,10 @@
+.footer-icon{
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.footer-icon:hover{
+    transform: translateY(-7px);
+}

@@ -53,7 +53,7 @@ const projectParagraphs = {
   },
   "Gaia Platform - Desktop": {
     name: "GAIA - Desktop",
-    body: "GAIA Platform also offers a desktop app, providing same functionalities as the website alternative",
+    body: "GAIA Platform also offers a desktop app, providing same functionalities as the website alternative (Only Windows)",
     image1: react,
     image2: tauri,
     image3: css,
@@ -115,8 +115,8 @@ const projectParagraphs = {
 
 export default function Projects() {
   return (
-    <Box style={{ paddingTop: "15em" }}>
-      <Container id="projects">
+    <Box style={{ paddingTop: "15em" }} id="projects">
+      <Container>
         <h3 style={{ color: "white", textAlign: "center" }}>
           Project examples
         </h3>
@@ -144,11 +144,10 @@ export default function Projects() {
                 md="6"
                 sm="12"
                 xs="12"
-                className="mb-3 mb-sm-2 mb-md-2"
+                className="mb-3 mb-sm-2 mb-md-2 d-flex justify-content-center"
                 key={project}
               >
                 <Card
-                  sx={{ width: 1 }}
                   name={name}
                   body={body}
                   image1={image1}

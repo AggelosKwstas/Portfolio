@@ -73,13 +73,27 @@ export default function DrawerAppBar(props) {
     if (title == 0) {
       let id = "home";
       scroller.scrollTo(id, {
-        duration: 20,
+        duration: 200,
         smooth: true,
       });
     } else if (title == 1) {
       let id = "projects";
       scroller.scrollTo(id, {
-        duration: 20,
+        duration: 200,
+        smooth: true,
+      });
+    }
+    else if(title == 2) {
+      let id = "resume";
+      scroller.scrollTo(id, {
+        duration: 200,
+        smooth: true,
+      });
+    }
+    else if(title == 3) {
+      let id = "find";
+      scroller.scrollTo(id, {
+        duration: 200,
         smooth: true,
       });
     }
@@ -147,7 +161,7 @@ export default function DrawerAppBar(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
