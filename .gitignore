@@ -1,0 +1,6 @@
+# Ignore frontend/node_modules directory
+frontend/node_modules/
+
+# Ignore other directories or files as needed
+backend/node_modules/
+logs/
