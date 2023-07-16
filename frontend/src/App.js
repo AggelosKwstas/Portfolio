@@ -13,6 +13,7 @@ import ScrollToTop from "react-scroll-to-top";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
 
+
 function App() {
   useEffect(() => {
     AOS.init({
