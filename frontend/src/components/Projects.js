@@ -24,6 +24,7 @@ import lab3 from "../img/lab3.png";
 import idean1 from "../img/idean1.png";
 import idean2 from "../img/idean2.png";
 
+import Slide from "react-reveal/Bounce";
 import Card from "../components/Card";
 
 const projectParagraphs = {
@@ -115,54 +116,57 @@ const projectParagraphs = {
 
 export default function Projects() {
   return (
-    <Box style={{ paddingTop: "15em" }} id="projects">
-      <Container>
-        <h3 style={{ color: "white", textAlign: "center" }}>
-          Project examples
-        </h3>
-        <h5 style={{ color: "white", textAlign: "center" }}>
-          Overview for some of my projects!
-        </h5>
-        <Row>
-          {Object.entries(projectParagraphs).map(
-            ([
-              project,
-              {
-                name,
-                body,
-                image1,
-                image2,
-                image3,
-                tooltip1,
-                tooltip2,
-                tooltip3,
-                images,
-              },
-            ]) => (
-              <Col
-                lg="3"
-                md="6"
-                sm="12"
-                xs="12"
-                className="mb-3 mb-sm-2 mb-md-2 d-flex justify-content-center"
-                key={project}
-              >
-                <Card
-                  name={name}
-                  body={body}
-                  image1={image1}
-                  image2={image2}
-                  image3={image3}
-                  tooltip1={tooltip1}
-                  tooltip2={tooltip2}
-                  tooltip3={tooltip3}
-                  images={images}
-                />
-              </Col>
-            )
-          )}
-        </Row>
-      </Container>
-    </Box>
+    <Slide left>
+      <Box style={{ paddingTop: "20em" }} id="projects">
+        <Container>
+          <h3 style={{ color: "white", textAlign: "center" }}>
+            Project examples
+          </h3>
+          <h5 style={{ color: "white", textAlign: "center" }}>
+            Overview for some of my projects!
+          </h5>
+          <Row>
+            {Object.entries(projectParagraphs).map(
+              ([
+                project,
+                {
+                  name,
+                  body,
+                  image1,
+                  image2,
+                  image3,
+                  tooltip1,
+                  tooltip2,
+                  tooltip3,
+                  images,
+                },
+              ]) => (
+                <Col
+                  lg="3"
+                  md="6"
+                  sm="12"
+                  xs="12"
+                  className="mb-3 mb-sm-2 mb-md-2 d-flex justify-content-center"
+                  key={project}
+                >
+                  <Card
+                    name={name}
+                    body={body}
+                    image1={image1}
+                    image2={image2}
+                    image3={image3}
+                    tooltip1={tooltip1}
+                    tooltip2={tooltip2}
+                    tooltip3={tooltip3}
+                    images={images}
+                    key={project}
+                  />
+                </Col>
+              )
+            )}
+          </Row>
+        </Container>
+      </Box>
+    </Slide>
   );
 }

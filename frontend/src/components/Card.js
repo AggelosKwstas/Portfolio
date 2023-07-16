@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
+import Slide from "react-reveal/Bounce";
 
 import axios from "axios";
 
@@ -48,100 +49,102 @@ export default function MediaCard({
   images,
 }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardCarousel images={images} />
-      <CardContent>
-        <Row>
-          <Col>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              sx={{ fontSize: "15px" }}
+    <Slide left>
+      <Card sx={{ maxWidth: 345 }}>
+        <CardCarousel images={images} />
+        <CardContent>
+          <Row>
+            <Col>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{ fontSize: "15px" }}
+              >
+                {name}
+              </Typography>
+            </Col>
+            <Col>
+              <div style={{ float: "right", cursor: "pointer" }}>
+                <Tooltip
+                  placement="top-end"
+                  title={<Typography fontSize={18}>{tooltip1}</Typography>}
+                  arrow
+                >
+                  <img
+                    src={image1}
+                    style={{ width: "25px", padding: "3px" }}
+                  ></img>
+                </Tooltip>
+                <Tooltip
+                  placement="top-end"
+                  title={<Typography fontSize={18}>{tooltip2}</Typography>}
+                  arrow
+                >
+                  <img
+                    src={image2}
+                    style={{ width: "25px", padding: "3px" }}
+                  ></img>
+                </Tooltip>
+                <Tooltip
+                  placement="top-end"
+                  title={<Typography fontSize={18}>{tooltip3}</Typography>}
+                  arrow
+                >
+                  <img
+                    src={image3}
+                    style={{ width: "25px", padding: "3px" }}
+                  ></img>
+                </Tooltip>
+              </div>
+            </Col>
+          </Row>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            style={{ fontSize: "18px", textAlign: "center" }}
+          >
+            {body}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          {name === "GAIA Platform" || name === "Idean Platform" ? (
+            <Button
+              variant="contained"
+              style={{ marginLeft: "auto", marginRight: "auto" }}
+              size="large"
+              onClick={() => redirectWebsite(name)}
             >
-              {name}
-            </Typography>
-          </Col>
-          <Col>
-            <div style={{ float: "right", cursor: "pointer" }}>
-              <Tooltip
-                placement="top-end"
-                title={<Typography fontSize={18}>{tooltip1}</Typography>}
-                arrow
-              >
-                <img
-                  src={image1}
-                  style={{ width: "25px", padding: "3px" }}
-                ></img>
-              </Tooltip>
-              <Tooltip
-                placement="top-end"
-                title={<Typography fontSize={18}>{tooltip2}</Typography>}
-                arrow
-              >
-                <img
-                  src={image2}
-                  style={{ width: "25px", padding: "3px" }}
-                ></img>
-              </Tooltip>
-              <Tooltip
-                placement="top-end"
-                title={<Typography fontSize={18}>{tooltip3}</Typography>}
-                arrow
-              >
-                <img
-                  src={image3}
-                  style={{ width: "25px", padding: "3px" }}
-                ></img>
-              </Tooltip>
-            </div>
-          </Col>
-        </Row>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          style={{ fontSize: "18px", textAlign: "center" }}
-        >
-          {body}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        {name === "GAIA Platform" || name === "Idean Platform" ? (
-          <Button
-            variant="contained"
-            style={{ marginLeft: "auto", marginRight: "auto" }}
-            size="large"
-            onClick={() => redirectWebsite(name)}
-          >
-            Go to website
-          </Button>
-        ) : name === "Equipment" ? (
-          <Button
-            variant="contained"
-            disabled
-            style={{ marginLeft: "auto", marginRight: "auto" }}
-            size="large"
-          >
-            Private website
-          </Button>
-        ) : null}
-        {name === "GAIA - Desktop" && (
-          <Button
-            variant="contained"
-            style={{ marginLeft: "auto", marginRight: "auto" }}
-            size="large"
-            onClick={downloadGAIA}
-          >
-            <Tooltip
-              placement="bottom"
-              title={<Typography fontSize={18}>Windows only</Typography>}
-              arrow
+              Go to website
+            </Button>
+          ) : name === "Equipment" ? (
+            <Button
+              variant="contained"
+              disabled
+              style={{ marginLeft: "auto", marginRight: "auto" }}
+              size="large"
             >
-              Download Installer
-            </Tooltip>
-          </Button>
-        )}
-      </CardActions>
-    </Card>
+              Private website
+            </Button>
+          ) : null}
+          {name === "GAIA - Desktop" && (
+            <Button
+              variant="contained"
+              style={{ marginLeft: "auto", marginRight: "auto" }}
+              size="large"
+              onClick={downloadGAIA}
+            >
+              <Tooltip
+                placement="bottom"
+                title={<Typography fontSize={18}>Windows only</Typography>}
+                arrow
+              >
+                Download Installer
+              </Tooltip>
+            </Button>
+          )}
+        </CardActions>
+      </Card>
+    </Slide>
   );
 }
