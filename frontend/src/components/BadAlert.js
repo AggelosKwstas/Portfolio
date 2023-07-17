@@ -10,7 +10,6 @@ export default function ErrorAlert() {
     position: positions.MIDDLE,
   };
 
-
   return (
     <div style={{ margin: "auto", width: "280px" }}>
       <Collapse in={open}>

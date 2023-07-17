@@ -3,7 +3,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import React, { useState } from "react";
 import { positions } from "react-alert";
 
-export default function SuccessAlert({ open, handleClick }) {
+
+export default function SuccessAlert({ open , handleClick }) {
+
   const options = {
     position: positions.MIDDLE,
   };
@@ -12,7 +14,7 @@ export default function SuccessAlert({ open, handleClick }) {
     <div style={{ margin: "auto", width: "260px",marginBottom:'-5em' }}>
       <Collapse in={open}>
         <Alert
-          severity="success"
+          severity="info"
           {...options}
           action={
             <IconButton
@@ -26,7 +28,7 @@ export default function SuccessAlert({ open, handleClick }) {
           }
           sx={{ fontWeight: "600" }}
         >
-          Successfully sent email.
+         All form fields required.
         </Alert>
       </Collapse>
     </div>

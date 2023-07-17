@@ -27,6 +27,8 @@
   position: static;
   width: 400px;
   margin: auto;
+  height: auto;
+  margin-bottom: 13.75 em;
   padding: 36px 48px 48px 48px;
   background-color: #f2efee;
 
