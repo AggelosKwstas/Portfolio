@@ -40,7 +40,7 @@ export default function DrawerAppBar(props) {
           paddingTop: "30px",
         }}
       >
-        Portfolio
+        Menu
       </Box>
       <Typography
         variant="h6"

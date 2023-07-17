@@ -11,6 +11,7 @@ import Projects from "./components/Projects";
 import Home from "./components/Home";
 import ScrollToTop from "react-scroll-to-top";
 import Resume from "./components/Resume";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 
@@ -28,6 +29,7 @@ function App() {
       <Home />
       <Projects />
       <Resume />
+      <Contact/>
       <Footer />
       <ScrollToTop
         smooth

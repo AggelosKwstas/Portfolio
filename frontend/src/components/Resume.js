@@ -11,7 +11,7 @@ const openPDF = () => {
 export default function Resume() {
   return (
     <Slide right>
-      <div style={{ paddingTop: "10em", paddingBottom: "15em" }} id="resume">
+      <div style={{ paddingTop: "10em", paddingBottom: "5em" }} id="resume">
         <Container className="pt-2 pb-2">
           <h3 style={{ color: "white", textAlign: "center" }}>My resume</h3>
         </Container>

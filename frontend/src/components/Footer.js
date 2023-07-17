@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
+
 export default function Footer() {
   return (
     <Box sx={{ backgroundColor: "#1976d2", paddingTop: "2em" }} id="find">
