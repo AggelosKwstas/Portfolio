@@ -3,4 +3,5 @@ frontend/node_modules/
 
 # Ignore other directories or files as needed
 backend/node_modules/
+backend/.env
 logs/

@@ -37,7 +37,7 @@ export default function Footer() {
               gutterBottom
               sx={{ color: "white" }}
             >
-              Contact me
+              Information
             </Typography>
             <Typography
               variant="body2"
