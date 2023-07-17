@@ -16,9 +16,9 @@
   transform: translateY(-7px);
 }
 
-.css-11b3ww9-MuiPaper-root-MuiAppBar-root {
-  background-color: #0d47a1 !important;
-}
+/* .css-11b3ww9-MuiPaper-root-MuiAppBar-root {
+  background-color: #0d47a1;
+} */
 
 .MuiStepLabel-label.Mui-active {
   color: white !important;

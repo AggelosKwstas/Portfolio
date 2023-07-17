@@ -3,6 +3,8 @@ import "../css/Contact.css";
 import messageIcon from "../img/email.png";
 import { Row, Col } from "react-bootstrap";
 import axios from "axios";
+import SuccessAlert from "./SucessAlert";
+import BadAlert from "./BadAlert";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -10,8 +12,20 @@ export default function Contact() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+  const [alert, setAlert] = useState(false);
+  const [bad, setBad] = useState(false);
+  const [open, setOpen] = useState(true);
+
+
+  const handleCloseAlert = () => {
+    setOpen(false);
+    setAlert(false);
+  };
+
   const handleContactSubmit = async (event) => {
     event.preventDefault();
+
+    setOpen(true);
 
     const contactData = {
       name: name,
@@ -24,14 +38,50 @@ export default function Contact() {
       .post("http://localhost:3001/contact", contactData)
       .then((response) => {
         console.log("Success:", response.data);
+
+        setAlert(true);
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error:", error.name);
+
+        setBad(true);
+
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
       });
   };
 
   return (
     <div>
+      {alert && (
+        <div data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+          <SuccessAlert open={open} handleClick = {handleCloseAlert} />
+        </div>
+      )}
+
+      {bad && (
+        <div data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
+          <BadAlert />
+        </div>
+      )}
+
       <div className="centered-container">
         <div className="con">
           <Row className="align-items-center justify-content-center">
@@ -82,7 +132,7 @@ export default function Contact() {
             <div>
               <label for="Subject">Subject </label>
               <input
-                id="Subject"
+                id="subject"
                 type="text"
                 placeholder="Example"
                 name="Subject"
@@ -96,7 +146,7 @@ export default function Contact() {
             <div>
               <label for="body">Message </label>
               <textarea
-                id="text"
+                id="message"
                 type="text"
                 placeholder="Example message"
                 name="text"
