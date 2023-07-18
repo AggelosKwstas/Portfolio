@@ -1,6 +1,7 @@
 {
   "name": "untitled4",
   "version": "0.1.0",
+  "homepage": "/Portfolio",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
