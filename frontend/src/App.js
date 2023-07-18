@@ -20,30 +20,30 @@ function App() {
       once: true,
     });
 
-    const handleScroll = () => {
-      const navbar = document.querySelector(
-        ".css-11b3ww9-MuiPaper-root-MuiAppBar-root"
-      );
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+    // const handleScroll = () => {
+    //   const navbar = document.querySelector(
+    //     ".css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+    //   );
+    //   const scrollTop =
+    //     window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop === 0) {
-        navbar.style.boxShadow = "none";
-        navbar.style.backgroundColor = "transparent";
-      } else {
-        navbar.style.backgroundColor = "#0d47a1";
-        navbar.style.boxShadow =
-          "0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)";
-      }
-    };
+    //   if (scrollTop === 0) {
+    //     navbar.style.boxShadow = "none";
+    //     navbar.style.backgroundColor = "transparent";
+    //   } else {
+    //     navbar.style.backgroundColor = "#0d47a1";
+    //     navbar.style.boxShadow =
+    //       "0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)";
+    //   }
+    // };
 
-    handleScroll();
+    // handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
   }, []);
   const isMobile = window.innerWidth <= 768;
   const viewBox = isMobile ? "9 1 20 25" : "0 0 24 24";
