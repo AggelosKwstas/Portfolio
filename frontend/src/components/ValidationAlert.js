@@ -11,7 +11,7 @@ export default function SuccessAlert({ open , handleClick }) {
   };
 
   return (
-    <div style={{ margin: "auto", width: "260px",marginBottom:'-5em' }}>
+    <div style={{ margin: "auto", width: "260px",marginBottom:'1em'}}>
       <Collapse in={open}>
         <Alert
           severity="info"

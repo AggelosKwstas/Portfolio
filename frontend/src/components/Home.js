@@ -5,6 +5,7 @@ import Progress from "../components/Progress";
 import code from "../img/code.png";
 import ReactTypingEffect from "react-typing-effect";
 import Jump from 'react-reveal/Jump';
+import '../css/Home.css';
 
 
 export default function Home() {
@@ -20,7 +21,9 @@ export default function Home() {
       >
         <Container>
           <Jump>
+            <div className="image-container">
             <img
+            className="image"
               src={code}
               alt="code"
               style={{
@@ -30,6 +33,7 @@ export default function Home() {
                 width: "13em",
               }}
             ></img>
+            </div>
             </Jump>
             <Bounce left>
             <div style={{ paddingTop: "5em" }}>

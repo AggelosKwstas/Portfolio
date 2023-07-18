@@ -6,6 +6,8 @@ import axios from "axios";
 import SuccessAlert from "./SucessAlert";
 import BadAlert from "./BadAlert";
 import ValidationAlert from "./ValidationAlert";
+import Fade from 'react-reveal/Fade';
+
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -22,6 +24,7 @@ export default function Contact() {
     setOpen(false);
     setAlert(false);
     setValidation(false);
+    console.log('closed alert');
   };
 
   const handleContactSubmit = async (event) => {
@@ -78,7 +81,14 @@ export default function Contact() {
   return (
     <div>
       <Row>
-        {validation && (
+        <Fade left>
+          <div
+            className="centered-container"
+            style={{ paddingBottom: "-500px" }}
+          >
+            <div className="con">
+              <Row className="align-items-center justify-content-center">
+              {validation && (
           <div
             data-aos="fade-down"
             data-aos-delay="50"
@@ -105,94 +115,92 @@ export default function Contact() {
             <SuccessAlert open={open} handleClick={handleCloseAlert} />
           </div>
         )}
-        <div className="centered-container" style={{ paddingBottom: "-500px" }}>
-          <div className="con">
-            <Row className="align-items-center justify-content-center">
-              <Col xs="auto">
-                <img
-                  src={messageIcon}
-                  style={{ width: "30px" }}
-                  alt="Message Icon"
-                />
-              </Col>
+                <Col xs="auto" style={{paddingTop:'20px'}}>
+                  <img
+                    src={messageIcon}
+                    style={{ width: "30px" }}
+                    alt="Message Icon"
+                  />
+                </Col>
 
-              <Col xs="auto">
-                <h2 className="login-title mb-0">Contact me</h2>
-              </Col>
-            </Row>
-            <form
-              className="login-form"
-              method="POST"
-              onSubmit={handleContactSubmit}
-            >
-              <div>
-                <label for="name">Name </label>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="Example"
-                  name="name"
-                  required
-                  onChange={(event) => {
-                    setName(event.target.value);
-                  }}
-                />
-              </div>
-
-              <div>
-                <label for="email">Email </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Example@gmail.com"
-                  name="email"
-                  required
-                  onChange={(event) => {
-                    setEmail(event.target.value);
-                  }}
-                />
-              </div>
-
-              <div>
-                <label for="Subject">Subject </label>
-                <input
-                  id="subject"
-                  type="text"
-                  placeholder="Example"
-                  name="Subject"
-                  required
-                  onChange={(event) => {
-                    setSubject(event.target.value);
-                  }}
-                />
-              </div>
-
-              <div>
-                <label for="body">Message </label>
-                <textarea
-                  id="message"
-                  type="text"
-                  placeholder="Example message"
-                  name="text"
-                  style={{ resize: "none" }}
-                  required
-                  onChange={(event) => {
-                    setMessage(event.target.value);
-                  }}
-                />
-              </div>
-
-              <button
-                className="btn btn--form"
-                type="submit"
-                value="Log in"
-                onClick={handleContactSubmit}
+                <Col xs="auto" style={{paddingTop:'20px'}}>
+                  <h2 className="login-title mb-0">Contact me</h2>
+                </Col>
+              </Row>
+              <form
+                className="login-form"
+                method="POST"
+                onSubmit={handleContactSubmit}
               >
-                Send
-              </button>
-            </form>
+                <div>
+                  <label for="name">Name </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Example"
+                    name="name"
+                    required
+                    onChange={(event) => {
+                      setName(event.target.value);
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label for="email">Email </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Example@gmail.com"
+                    name="email"
+                    required
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label for="Subject">Subject </label>
+                  <input
+                    id="subject"
+                    type="text"
+                    placeholder="Example"
+                    name="Subject"
+                    required
+                    onChange={(event) => {
+                      setSubject(event.target.value);
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label for="body">Message </label>
+                  <textarea
+                    id="message"
+                    type="text"
+                    placeholder="Example message"
+                    name="text"
+                    style={{ resize: "none" }}
+                    required
+                    onChange={(event) => {
+                      setMessage(event.target.value);
+                    }}
+                  />
+                </div>
+
+                <button
+                  className="btn btn--form"
+                  type="submit"
+                  value="Log in"
+                  onClick={handleContactSubmit}
+                >
+                  Send
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
+        </Fade>
       </Row>
     </div>
   );
