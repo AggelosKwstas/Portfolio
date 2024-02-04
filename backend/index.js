@@ -2,8 +2,16 @@ var express = require("express");
 const app = express();
 const cors = require("cors");
 
-app.use(cors());
-app.use(express.json());
+// Allow requests from the frontend domain
+app.use(cors({
+  origin: 'https://aggelos-kostas.netlify.app',
+}));
+
+// Use the '/api' path as a base for backend routes
+const apiRouter = express.Router();
+app.use('/backend', apiRouter);
+
+apiRouter.use(express.json());
 
 require("dotenv").config();
 const nodemailer = require("nodemailer");
@@ -33,7 +41,8 @@ async function mainMail(name, email, subject, message) {
   }
 }
 
-app.get("/download", (req, res) => {
+apiRouter.get("/download", (req, res) => {
+  // Adjust the file path based on your project structure
   const filePath = __dirname + "/public/assets/" + req.params.filename;
   res.download(filePath, "GAIA Platform_1.1.0_x64_en-US.msi", (err) => {
     if (err) {
@@ -45,7 +54,7 @@ app.get("/download", (req, res) => {
   });
 });
 
-app.post("/contact", async (req, res, next) => {
+apiRouter.post("/contact", async (req, res, next) => {
   const { name, email, subject, message } = req.body;
   try {
     await mainMail(name, email, subject, message);
@@ -55,6 +64,9 @@ app.post("/contact", async (req, res, next) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log("Server is running on port 3001");
+const port = process.env.PORT || 3001;
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
+

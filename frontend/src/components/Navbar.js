@@ -103,7 +103,7 @@ export default function DrawerAppBar(props) {
   return (
     <Box>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" id="Navbar">
         <Toolbar>
           <IconButton
             color="inherit"
