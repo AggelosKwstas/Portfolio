@@ -45,7 +45,7 @@ export default function Contact() {
     };
 
     axios
-      .post("http://localhost:3001/contact", contactData)
+      .post("https://aggeloskostas-backend.onrender.com/backend/contact", contactData)
       .then((response) => {
         console.log("Success:", response.data);
 

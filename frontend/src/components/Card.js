@@ -20,7 +20,7 @@ const redirectWebsite = (name) => {
 // node logic
 const downloadGAIA = async () => {
   try {
-    const response = await axios.get("http://localhost:3001/download", {
+    const response = await axios.get("https://aggeloskostas-backend.onrender.com/backend/download", {
       responseType: "blob",
     });
 

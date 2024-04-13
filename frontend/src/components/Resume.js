@@ -1,10 +1,11 @@
 import "../css/Resume.css";
-import resume from "../img/resume.png";
+import resume from "../img/resumeUpdated.jpg";
 import { Container, Col, Row } from "react-bootstrap";
 import Button from "@mui/material/Button";
 import Slide from "react-reveal/Bounce";
 const openPDF = () => {
-  const pdfUrl = process.env.PUBLIC_URL + "/resume.pdf";
+  const pdfUrl = process.env.PUBLIC_URL + "/resumeUpdated.pdf";
+  console.log(pdfUrl);
   window.open(pdfUrl, "_blank");
 };
 

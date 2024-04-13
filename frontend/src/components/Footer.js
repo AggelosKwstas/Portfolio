@@ -80,7 +80,7 @@ export default function Footer() {
               <GitHub />
             </Link>
             <Link
-              href="https://www.instagram.com/agelos_kostas/"
+              href="https://www.instagram.com/aggeloskostas_/"
               target="_blank"
               color="inherit"
               sx={{ pl: 1, pr: 1, color: "white" }}
@@ -89,7 +89,7 @@ export default function Footer() {
               <Instagram />
             </Link>
             <Link
-              href="https://www.linkedin.com/in/aggelos-kwstas-876447232/"
+              href="https://www.linkedin.com/in/aggelos-kostas-876447232/"
               color="inherit"
               target="_blank"
               className="footer-icon"
